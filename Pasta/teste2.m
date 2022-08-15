@@ -7,8 +7,9 @@ clc
 %% Code
 t = 0:0.01:2;
 y = -3:0.01:3;
-
+figure
 x = sin(2*pi*t);
+
 plot(t, x, 'k--');
 
 hold all
