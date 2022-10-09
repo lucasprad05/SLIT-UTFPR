@@ -7,34 +7,30 @@ ni= 0:10;
 x = ((1/2).^ni);
 N = length(x);
 
-y1 = 6*(1/4).^ni + 2*(1/2).^ni; 
-%for ni = 1:N-1
-%y(ni+1) = y(ni)+x(ni+1);
-%end
+%Na mao, confirmacao
+y1 = 1*(1/4).^(ni-1) + 2*(1/2).^(ni-1); 
 
-%y(1) nao existe
 y(1) = 8;
 
 for ni = 2:N
-y(ni) =x(ni) +  y(ni-1)/4;
+    y(ni) =x(ni) +  y(ni-1)/4;
 end
 
 %vetor de n para plotar
-n = -1: N-2;
+n = -1:N-2;
 figure
 subplot(2,1,1)
 stem(n,x,'filled','k')
 xlabel('n')
+grid on
 ylabel('x[n]')
 ylim([0 1])
 
 subplot(2,1,2)
 hold all
-plot(n,y1)
+plot(n,y1)%na mao, confirmacao
 stem(n,y,'filled','r')
 xlabel('n')
 ylabel('y[n]')
-ylim([0 8])
+ylim([0 9])
 grid on
-
-
